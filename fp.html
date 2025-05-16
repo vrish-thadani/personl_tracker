@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Growth Tracker</title>
+  <link rel="stylesheet" href="fp.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>ITM Personal Development Tracker</h1>
+      <p class="subtitle">Let's keep track of what I'm learning this year!</p>
+    </header>
+
+    <section class="tracker-box">
+      <form id="activity-form" class="form-section">
+        <input type="text" id="activity-input" placeholder="e.g. Joined a webinar..." />
+        <button type="submit" class="add-btn">Add Activity</button>
+      </form>
+
+      <ul id="activity-list"></ul>
+    </section>
+
+    <div class="progress-section">
+      <label for="progress">Overall Progress:</label>
+      <progress id="progress-bar" value="0" max="100"></progress>
+      <span id="progress-text">0%</span>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('activity-form');
+    const input = document.getElementById('activity-input');
+    const list = document.getElementById('activity-list');
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+
+    let activities = [];
+
+    function updateProgress() {
+      const completed = activities.filter(item => item.completed).length;
+      const percent = activities.length ? Math.round((completed / activities.length) * 100) : 0;
+      progressBar.value = percent;
+      progressText.textContent = `${percent}%`;
+    }
+
+    function renderActivities() {
+      list.innerHTML = '';
+      activities.forEach((activity, index) => {
+        const li = document.createElement('li');
+        li.className = activity.completed ? 'completed' : '';
+        li.innerHTML = `
+          <input type="checkbox" ${activity.completed ? 'checked' : ''} onchange="toggleComplete(${index})" />
+          ${activity.text}
+        `;
+        list.appendChild(li);
+      });
+      updateProgress();
+    }
+
+    window.toggleComplete = function(index) {
+      activities[index].completed = !activities[index].completed;
+      renderActivities();
+    };
+
+    
+  </script>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 ITM Student Development Portal</p>
+      <p>Empowering Growth. Inspiring Progress by-vrish thadani.</p>
+    </div>
+  </footer>
+</body>
+</html>

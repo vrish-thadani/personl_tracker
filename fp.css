@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f8f9fc, #e3f2fd);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+  .tracker-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem 3rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+footer.footer {
+    background-color: #3f51b5;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    margin-top: auto;
+    width: 100%;
+}
+  
+  header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  header h1 {
+    color: #3f51b5;
+    margin-bottom: 0.5rem;
+  }
+  
+  header p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  form button {
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #303f9f;
+  }
+  
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .card {
+    background: #f1f3f4;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+  }
+  
+  .card label {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .card.done {
+    background: #dcedc8;
+    color: #33691e;
+    text-decoration: line-through;
+  }
+  
+  .progress-wrap {
+    margin-top: 1.5rem;
+  }
+  
+  progress {
+    width: 100%;
+    height: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 5px;
+  }
+  
+  progress::-webkit-progress-value {
+    background: #4caf50;
+  }
